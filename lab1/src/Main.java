@@ -1,42 +1,36 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        // Cadastro de um passageiro
+        Passenger passenger = new Passenger(92, "Ana", "11999999999");
+        System.out.println(passenger);
+        passenger.updatePhone("11888888888");
+        System.out.println("Campo \"phone\" atualizado para pessoa passageira 92.");
 
-        // Instanciando os objetos
-        Taxi taxi = new Taxi();
-        Cabbie cabbie = new Cabbie();
-        System.out.print("Digite o nome do passageiro: ");
-        Passenger passenger = new Passenger(scanner.nextLine());
+        // Cadastro de um taxista
+        Cabbie cabbie = new Cabbie(133, "Julio", 4.8);
+        System.out.println(cabbie);
+        cabbie.updateRating(5.0);
+        System.out.println("Campo \"rating\" atualizado para pessoa motorista 133.");
 
-        // Definindo o destino do passageiro
-        System.out.print("Digite o destino do passageiro: ");
-        String destination = scanner.nextLine();
-        passenger.setDestination(destination);
-        passenger.performRole();
+        // Cadastro de um veículo
+        Vehicle vehicle = new Vehicle(235, "Ford ABC123");
+        System.out.println(vehicle);
+        vehicle.updateCabbieId("133");
+        System.out.println("Campo \"cabbieId\" atualizado para veículo 235.");
 
-        // Simulação da corrida
-        System.out.println(passenger.getName() + " chama um táxi");
-        taxi.hail();
+        // Requisitar uma corrida
+        Ride ride = new Ride(passenger, cabbie, "Campinas", "Rio de Janeiro");
+        System.out.println(ride);
 
-        System.out.println(passenger.getName() + " entra no táxi");
-        System.out.println(passenger.getName() + " informa ao taxista o destino");
+        // Processar pagamento
+        Payment payment = new Payment("Pix");
+        payment.processPayment();  // Pagamento não reconhecido
+        payment = new Payment("Credit Card");
+        payment.processPayment();  // Pagamento aceito
 
-        taxi.setDestination(passenger.getDestination());
-
-        
-        // Gorjeta
-        System.out.print("Deseja dar gorjeta? (s/n): ");
-        char tipChoice = scanner.next().charAt(0);
-        if (tipChoice == 's' || tipChoice == 'S') {
-            System.out.println(passenger.getName() + " paga o táxista com gorjeta");
-        }else{
-            System.out.println(passenger.getName() + " paga o táxista sem gorjeta");
-        }
-
-        System.out.println(passenger.getName() + " sai do táxi");
-
-        scanner.close();
+        // Finalizar corrida
+        System.out.println("Corrida finalizada.");
     }
 }

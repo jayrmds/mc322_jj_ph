@@ -1,10 +1,14 @@
 public class Passenger extends Person {
+    private int id;
     private String destination;
     private String name;
+    private String phone;
 
-    public Passenger(String name) {
+    public Passenger(int id, String name, String phone) {
+        this.id = id;
         this.destination = "";
         this.name = name;
+        this.phone = phone;
     }
 
     @Override
@@ -14,6 +18,10 @@ public class Passenger extends Person {
 
     public void setDestination(String destination) {
         this.destination = destination;
+    }
+
+    public void updatePhone(String newPhone) {
+        this.phone = newPhone;
     }
 
     public String getDestination() {
