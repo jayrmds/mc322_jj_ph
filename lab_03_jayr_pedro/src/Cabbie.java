@@ -21,4 +21,8 @@ public class Cabbie {
     public String getName() {
         return this.name;
     }
+
+    public Integer getId() {
+        return this.id;
+    }
 }

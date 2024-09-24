@@ -16,4 +16,8 @@ public class Vehicle {
     public String toString() {
         return "Veículo " + id + " (" + model + ") criado com sucesso.";
     }
+
+    public Integer getId() {
+        return this.id;
+    }
 }

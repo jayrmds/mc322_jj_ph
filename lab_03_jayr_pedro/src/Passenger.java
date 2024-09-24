@@ -4,7 +4,7 @@ public class Passenger extends Person {
     private String name;
     private String phone;
 
-    public Passenger(int id, String name, String phone) {
+    public Passenger(int id, String name) {
         this.id = id;
         this.destination = "";
         this.name = name;
@@ -30,5 +30,8 @@ public class Passenger extends Person {
 
     public String getName() {
         return this.name;
+    }
+    public Integer getId() {
+        return this.id;
     }
 }
