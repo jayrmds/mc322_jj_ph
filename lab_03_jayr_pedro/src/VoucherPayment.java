@@ -1,8 +1,8 @@
-public class CreditCardPayment implements PaymentMethod {
-    private static final double TAX = PaymentType.CREDIT_CARD.getFee();
+public class VoucherPayment implements PaymentMethod {
+    private static final double TAX = PaymentType.VOUCHER.getFee();
     private boolean isNightTime;
 
-    public CreditCardPayment(boolean isNightTime) {
+    public VoucherPayment(boolean isNightTime) {
         this.isNightTime = isNightTime;
     }
 

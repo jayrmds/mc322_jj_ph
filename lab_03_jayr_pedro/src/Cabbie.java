@@ -1,28 +1,25 @@
 public class Cabbie {
-    private int id;
+    private String id;
     private String name;
-    private double rating;
+    private float rate;
 
-    public Cabbie(int id, String name, double rating) {
+    // Construtor
+    public Cabbie(String id, String name, float rate) {
         this.id = id;
         this.name = name;
-        this.rating = rating;
+        this.rate = rate;
     }
 
-    public void updateRating(double newRating) {
-        this.rating = newRating;
+    // Métodos getters
+    public String getId() {
+        return id;
     }
 
-    @Override
-    public String toString() {
-        return "Pessoa motorista " + id + " (" + name + ") criada com sucesso.";
-    }
-    
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    public Integer getId() {
-        return this.id;
+    public float getRate() {
+        return rate;
     }
 }

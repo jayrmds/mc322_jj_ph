@@ -1,14 +1,12 @@
 public class Passenger extends Person {
     private int id;
-    private String destination;
     private String name;
-    private String phone;
+    private Location startLocation;
+    private Location destination;
 
     public Passenger(int id, String name) {
         this.id = id;
-        this.destination = "";
         this.name = name;
-        this.phone = phone;
     }
 
     @Override
@@ -16,21 +14,26 @@ public class Passenger extends Person {
         System.out.println(name + " define o destino (" + destination + ")");
     }
 
-    public void setDestination(String destination) {
+    public void setStartLocation(Location startLocation) {
+        this.startLocation = startLocation;
+    }
+
+    public void setDestination(Location destination) {
         this.destination = destination;
     }
 
-    public void updatePhone(String newPhone) {
-        this.phone = newPhone;
+    public Location getStartLocation() {
+        return startLocation;
     }
 
-    public String getDestination() {
-        return this.destination;
+    public Location getDestination() {
+        return destination;
     }
 
     public String getName() {
         return this.name;
     }
+
     public Integer getId() {
         return this.id;
     }

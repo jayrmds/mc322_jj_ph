@@ -23,4 +23,9 @@ public enum Location {
     public int getY() {
         return y;
     }
+
+    @Override
+    public String toString() {
+        return this.name() + " (" + x + ", " + y + ")";
+    }
 }
